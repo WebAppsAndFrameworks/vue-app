@@ -48,5 +48,7 @@
   "eslintConfig": {
     "extends": "airbnb"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue": "^1.0.25"
+  }
 }
