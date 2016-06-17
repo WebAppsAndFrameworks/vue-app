@@ -18,6 +18,7 @@ var config = {
     }),
   ],
   module: {
+    noParse: /node_modules\/json-schema\/lib\/validate\.js/,
     preLoaders: [
       {
         test: /\.js$/,
@@ -33,6 +34,9 @@ var config = {
         include: projectRoot,
         exclude: /node_modules/,
       },
+      { 
+        test: /\.json$/,
+        loader: 'json-loader' },
       {
         test: /\.(html|webmanifest|te?xt)$/,
         loader: 'file-loader?name=[name].[ext]',
@@ -54,7 +58,7 @@ var config = {
         loaders: ['url-loader']
       }
     ]
-  }
+  },
 };
 
 if (process.env.NODE_ENV == 'production') {
