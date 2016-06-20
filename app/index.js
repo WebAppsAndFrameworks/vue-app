@@ -19,11 +19,14 @@ new Vue({ // eslint-disable-line no-new
     response: {},
   },
   methods: {
-    getShippingInfo: function() {
+    getShippingInfo: () => {
       const xhr = new XMLHttpRequest();
       xhr.open('GET', `${BASE_API_URL}/${this.carrier}/${this.trackingNum}`, true);
       xhr.withCredentials = false;
-      xhr.onload = () => this.response = JSON.parse(xhr.responseText);
+      xhr.onload =
+        () => {
+          this.response = JSON.parse(xhr.responseText);
+        };
       xhr.send();
     },
   },

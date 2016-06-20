@@ -19,26 +19,34 @@
 
         <!-- Add your site or application content here -->
         <div id="app">
-            <select v-model="carrier">
-                <option value="" disabled selected>Select Carrier</option>
-                <option value="usps">USPS</option>
-                <option value="fedex">FedEx</option>
-                <option value="UPS">UPS</option>
-                <option value="dhl_express">DHL Express</option>
-                <option value="canada_post">Canada Post</option>
-                <option value="lasership">Lasership</option>
-                <option value="ontrac">OnTrac</option>
-                <option value="mondial_relay">Mondial Relay</option>
-            </select>
-            <input v-model="trackingNum" type="text" placeholder="Tracking Number">
-            <button v-on:click="getShippingInfo">Get Info</button>
-
-            <div>
-                <p>Carrier: {{ carrier }}</p>
-                <p>Tracking #: {{ trackingNum }}</p>
-                <p>Response:</p>
-                <p>{{ response | json }}</p>
+            <div class="row">
+                <div class="col--1-4">
+                    <div class="select">
+                        <select v-model="carrier">
+                            <option value="" disabled selected>Select Carrier</option>
+                            <option value="usps">USPS</option>
+                            <option value="fedex">FedEx</option>
+                            <option value="UPS">UPS</option>
+                            <option value="dhl_express">DHL Express</option>
+                            <option value="canada_post">Canada Post</option>
+                            <option value="lasership">Lasership</option>
+                            <option value="ontrac">OnTrac</option>
+                            <option value="mondial_relay">Mondial Relay</option>
+                        </select>
+                    </div>
+                    <input v-model="trackingNum" type="text" placeholder="Tracking Number">
+                    <button v-on:click="getShippingInfo">Get Info</button>
+                </div>
+                <div class="col">
+                    <div>
+                        <p>Carrier: {{ carrier }}</p>
+                        <p>Tracking #: {{ trackingNum }}</p>
+                        <p>Response:</p>
+                        <p>{{ response | json }}</p>
+                    </div>
+                </div>
             </div>
+            
         </div>
 
         <script src="app.js"></script>
