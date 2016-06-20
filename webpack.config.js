@@ -17,6 +17,7 @@ var config = {
       server: { baseDir: ['dist'] },
     }),
   ],
+  devtool: "#inline-source-map",
   module: {
     noParse: /node_modules\/json-schema\/lib\/validate\.js/,
     preLoaders: [
@@ -46,7 +47,7 @@ var config = {
         loaders: ['style', 'css', 'sass']
       },
       {
-        test: /\.(png|jpe?g|gif|svg|ico)$/,
+        test: /\.(png|jpe?g|gif|ico)$/,
         loader: 'file-loader?name=[path][name].[ext]&context=./app'
       },
       {
